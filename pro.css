@@ -1,0 +1,82 @@
+body {
+    background-color: #D4D6B9;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 3rem;
+}
+h1 {
+    text-align: center;
+    background-color: #383B53;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    margin-top: 0;
+}
+#Genre {
+    background-color: #66717E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    gap: 2rem;
+}   
+button {
+    background-color: #BBB6DF;
+    height: 80px;
+    width: 100px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#toggleCartBtn{
+    margin-top: 6rem;
+    color: white;
+    background-color: #353c40;
+}
+#cart {
+    margin-top: 20px;
+    display: none;
+   background-color: #1b324b;
+    color: white;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+#searchInput {
+    height: 40px;
+    width: 300px;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+#orderBtn{
+    margin-top: 2rem;
+    background-color: #424B54;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

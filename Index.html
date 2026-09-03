@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pro.css" />
+    <title>Book Heaven</title>
+</head>
+<body>
+<h1>Book Heaven</h1>
+<input type="text" id="searchInput" placeholder="Search for the book">
+<div id="Genre">
+    <button class="type">Fantasy</button>
+    <button class="type">Historical</button>
+    <button class="type">Horror</button>
+    <button class="type">Mystery</button>
+    <button class="type">Fiction</button>
+</div>
+<div id="BookCntr"></div>
+
+<button id="toggleCartBtn">🛒 View Cart</button>
+<div id="cart" >
+    <ul id="cartList"></ul>
+    <p id="cartEmptyText">Cart is empty</p>
+    </div>
+    <button id="orderBtn" onclick="placeOrder()">Place Order</button>
+    
+<script src="pro.js"></script>
+</body>
+</html>
