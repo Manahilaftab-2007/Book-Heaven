@@ -12,12 +12,14 @@ buttons.forEach(function (button) {
                 {
                     title: "Harry Potter",
                     desc: "By J.K. Rowling - A magical adventure.",
-                    image: "Fantasy1.jpg"
+                    image: "Fantasy1.jpg",
+                    price: 1300
                 },
                 {
                     title: "The Hobbit",
                     desc: "By J.R.R. Tolkien - An exciting fantasy journey.",
-                     image: "Fantasy2.jpg"
+                     image: "Fantasy2.jpg",
+                     price: 1400
                 }
             ]);
         } else if (button.id == "Historical") {
@@ -25,12 +27,14 @@ buttons.forEach(function (button) {
                 {
                     title: "All the Light We Cannot See",
                     desc: "By Anthony Doerr - WWII historical fiction.",
-                   image:"Historical1.jpg"
+                   image:"Historical1.jpg",
+                   price: 1600
                 },
                 {
                     title: "The Book Thief",
                     desc: "By Markus Zusak - Set in Nazi Germany.",
-                    image:"Historical2.jpg"
+                    image:"Historical2.jpg",
+                    price: 1200
                 }
             ]);
         } else if (button.id== "Horror") {
@@ -38,12 +42,14 @@ buttons.forEach(function (button) {
                 {
                     title: "The Shining",
                     desc: "By Stephen King - A terrifying stay at an isolated hotel.",
-                    image:"Horror1.jpg"
+                    image:"Horror1.jpg",
+                    price: 1500
                 },
                 {
                     title: "Dracula",
                     desc: "By Bram Stoker - The classic vampire tale.",
-                      image:"Horror2.jpg"
+                      image:"Horror2.jpg",
+                      price: 1300
                 }
             ]);
         } else if (button.id == "Mystery") {
@@ -51,12 +57,14 @@ buttons.forEach(function (button) {
                 {
                     title: "Gone Girl",
                     desc: "By Gillian Flynn - A twisted domestic thriller.",
-                    image:"Mystery1.jpg"
+                    image:"Mystery1.jpg",
+                    price: 1600
                 },
                 {
                     title: "Sherlock Holmes",
                     desc: "By Arthur Conan Doyle - Classic detective mysteries.",
                     image:"Mystery2.jpg",
+                    price: 1800
                 }
             ]);
         } else if (button.id == "Fiction") {
@@ -64,12 +72,14 @@ buttons.forEach(function (button) {
                 {
                     title: "The Alchemist",
                     desc: "By Paulo Coelho - A journey of self-discovery.",
-                    image:"Fiction1.jpg"
+                    image:"Fiction1.jpg",
+                    price: 2000
                 },
                 {
                     title: "To Kill a Mockingbird",
                     desc: "By Harper Lee - A classic tale of justice.",
-                    image:"Fiction2.jpg"
+                    image:"Fiction2.jpg",
+                    price: 2200
                 }
             ]);
         }
@@ -89,13 +99,14 @@ function addBooks(bookList) {
         imageEl.width = 150;
 
         let detailEl = document.createElement("p");
-        detailEl.textContent = book.desc;
+        detailEl.textContent = book.desc + "| Price : Rs. " + book.price;
+
 
         let cartBtn = document.createElement("button");
         cartBtn.textContent = "Add to Cart";
 
         cartBtn.onclick = function () {
-            addToCart(book.title);
+            addToCart(book);
         };
 
         bookDiv.append(imageEl, titleEl, detailEl, cartBtn);
@@ -103,10 +114,10 @@ function addBooks(bookList) {
     });
 }
 
-function addToCart(bookName) {
-    cart.push(bookName);
+function addToCart(book) {
+    cart.push(book);
     updateCartUI();
-    alert(bookName + " added to cart!");
+    alert(book.title + " added to cart!");
 }
 
 function updateCartUI() {
@@ -122,11 +133,19 @@ function updateCartUI() {
 
     emptyText.style.display = "none";
 
+     let total = 0;
+
     cart.forEach(function (item) {
         let li = document.createElement("li");
-        li.textContent = item;
+        li.textContent = item.title+ "- Rs " + item.price;
         cartList.appendChild(li);
+         total = total + Number(item.price);
     });
+   let totalLi = document.createElement("li");
+    totalLi.textContent = "Total Price: Rs " + total;
+    totalLi.style.fontWeight = "bold";
+    totalLi.style.listStyle = "none";
+    cartList.appendChild(totalLi);
 }
 
 function placeOrder() {
@@ -146,6 +165,7 @@ const allBooks = [
         desc: "By J.K. Rowling - A magical adventure.",
         genre: "Fantasy",
         image: "Fantasy1.jpg",
+         price: 1300
 
     },
     {
@@ -153,55 +173,64 @@ const allBooks = [
         desc: "By J.R.R. Tolkien - An exciting fantasy journey.",
         genre: "Fantasy",
         image: "Fantasy2.jpg",
+         price: 1400
     },
     {
         title: "All the Light We Cannot See",
         desc: "By Anthony Doerr - WWII historical fiction.",
         genre: "Historical",
-        image:"Historical1.jpg"
+        image:"Historical1.jpg",
+         price: 1600
 
     },
     {
         title: "The Book Thief",
         desc: "By Markus Zusak - Set in Nazi Germany.",
         genre: "Historical",
-        image:"Historical2.jpg"
+        image:"Historical2.jpg",
+         price: 1200
     },
     {
         title: "The Shining",
         desc: "By Stephen King - A terrifying stay at an isolated hotel.",
         genre: "Horror",
-          image:"Horror1.jpg"
+        image:"Horror1.jpg",
+        price: 1500
     },
     {
         title: "Dracula",
         desc: "By Bram Stoker - The classic vampire tale.",
         genre: "Horror",
-          image:"Horror2.jpg"
+        image:"Horror2.jpg",
+        price: 1300
     },
     {
         title: "Gone Girl",
         desc: "By Gillian Flynn - A twisted domestic thriller.",
         genre: "Mystery",
-          image:"Mystery1.jpg"
+          image:"Mystery1.jpg",
+           price: 1600
     },
     {
         title: "Sherlock Holmes",
         desc: "By Arthur Conan Doyle - Classic detective mysteries.",
         genre: "Mystery",
-          image:"Mystery2.jpg"
+          image:"Mystery2.jpg",
+           price: 1800
     },
     {
         title: "The Alchemist",
         desc: "By Paulo Coelho - A journey of self-discovery.",
         genre: "Fiction",
-        image:"Fiction1.jpg"
+        image:"Fiction1.jpg",
+         price: 2000
     },
     {
         title: "To Kill a Mockingbird",
         desc: "By Harper Lee - A classic tale of justice.",
         genre: "Fiction",
-        image:"Fiction2.jpg"
+        image:"Fiction2.jpg",
+         price: 2200
     }
 ];
 
