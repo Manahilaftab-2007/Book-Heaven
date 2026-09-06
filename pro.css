@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: #D4D6B9;
     text-align: center;
     margin: 0;
@@ -16,6 +16,8 @@ h1 {
     height: 80px;
     color: white;
     margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
  }
 
 #Genre {
@@ -52,7 +54,7 @@ button {
 
 #toggleCartBtn{
     width:25%;
-    margin-top: 2rem;
+    margin-top: 3rem;
     color: white;
     background-color: #353c40;
 }
@@ -72,33 +74,158 @@ button {
     border: 1px solid black;
     padding-left: 10px;
 }
+
 #orderBtn{
-   
     width:25%;
     margin-top: 2rem;
     background-color: #424B54;
     color: white;
 }
 
+ */
 
 
+ * {
+    box-sizing: border-box;
+}
 
+body {
+    background-color: #D4D6B9;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 3rem;
+    width: 100%;
+}
 
+h1 {
+    text-align: center;
+    background-color: #383B53;
+    color: white;
+    margin-top: 0;
+    padding: 10px;
+    min-height: 80px;
+}
 
+h1 span {
+    display: block;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 20px;
+}
 
+/* Genre buttons */
+#Genre {
+    background-color: #66717E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    padding: 2rem;
+    gap: 2rem;
+}
 
+button {
+    background-color: #BBB6DF;
+    height: 80px;
+    width: 100px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
 
+/* Books */
+#BookCntr {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
 
+#BookCntr > div {
+    width: 250px;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #7785AC;
+    border-radius: 10px;
+}
 
+/* Search */
+#searchInput {
+    height: 40px;
+    width: 300px;
+    max-width: 90%;
+    border: 1px solid black;
+    padding-left: 10px;
+}
 
+/* Cart button */
+#toggleCartBtn {
+    width: 25%;
+    min-width: 150px;
+    margin-top: 3rem;
+    color: white;
+    background-color: #353c40;
+}
 
+/* Cart */
+#cart {
+    margin-top: 20px;
+    display: none;
+    background-color: #BBB6DF;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
 
+/* Order button */
+#orderBtn {
+    width: 25%;
+    min-width: 150px;
+    margin-top: 2rem;
+    background-color: #424B54;
+    color: white;
+}
 
+/* Small screens */
+@media (max-width: 600px) {
 
+    h1 {
+        font-size: 24px;
+        min-height: auto;
+    }
 
+    h1 span {
+        font-size: 13px;
+    }
 
+    #Genre {
+        margin-top: 2rem;
+        padding: 1rem;
+        gap: 10px;
+    }
 
+    #BookCntr {
+        gap: 15px;
+        padding: 0 10px;
+    }
 
+    #BookCntr > div {
+        width: 90%;
+        max-width: 250px;
+    }
 
+    #cart {
+        width: 90%;
+        margin-left: 5%;
+    }
 
-
+    #toggleCartBtn,
+    #orderBtn {
+        width: 80%;
+    }
+}
